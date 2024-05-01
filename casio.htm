@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<title>CASIO F-91W</title>
+<style>
+body{background-color: #b7b8b0}
+
+.blink_me { animation: blinker 2s steps(2, start) infinite;}
+@keyframes blinker {  to { visibility: hidden;}}
+
+svg{
+ position: absolute;
+ inset: 0;
+ margin: auto;
+}
+
+rect{fill: #b7b8b0}
+path,circle{fill: #30343d}
+</style>
+
+<script>
+const aNums = ["M 52,31 Q 58,21 72,20 L 206,20 175,70 93,70 Z M 206,193 179,174 183,76 214,24 Q 236,24 240,51 L 232,175 Q 227,198 206,193 Z M 193,406 170,349 176,234 209,214 Q 226,212 230,226 L 220,380 Q 214,401 193,406 Z M 24,393 82,360 164,360 182,409 46,409 Q 31,406 24,393 Z M 47,217 78,236 72,354 20,382 26,236 Q 26,214 47,217 Z M 44,39 85,78 80,176 48,195 Q 30,197 29,180 L 36,51 Q 36,41 44,39 Z"  
+,"M 206,193 179,174 183,76 214,24 Q 236,24 240,51 L 232,175 Q 227,198 206,193 Z M 193,406 170,349 176,234 209,214 Q 226,212 230,226 L 220,380 Q 214,401 193,406 Z" 
+,"M 52,31 Q 58,21 72,20 L 206,20 175,70 93,70 Z M 206,193 179,174 183,76 214,24 Q 236,24 240,51 L 232,175 Q 227,198 206,193 Z M 24,393 82,360 164,360 182,409 46,409 Q 31,406 24,393 Z M 47,217 78,236 72,354 20,382 26,236 Q 26,214 47,217 Z M 54,207 90,183 168,183 201,205 168,227 90,227 Z" 
+, "M 52,31 Q 58,21 72,20 L 206,20 175,70 93,70 Z M 206,193 179,174 183,76 214,24 Q 236,24 240,51 L 232,175 Q 227,198 206,193 Z M 193,406 170,349 176,234 209,214 Q 226,212 230,226 L 220,380 Q 214,401 193,406 Z M 24,393 82,360 164,360 182,409 46,409 Q 31,406 24,393 Z M 54,207 90,183 168,183 201,205 168,227 90,227 Z" 
+,"M 206,193 179,174 183,76 214,24 Q 236,24 240,51 L 232,175 Q 227,198 206,193 Z M 193,406 170,349 176,234 209,214 Q 226,212 230,226 L 220,380 Q 214,401 193,406 Z M 44,39 85,78 80,176 48,195 Q 30,197 29,180 L 36,51 Q 36,41 44,39 Z M 54,207 90,183 168,183 201,205 168,227 90,227 Z" 
+,"M 52,31 Q 58,21 72,20 L 206,20 175,70 93,70 Z M 193,406 170,349 176,234 209,214 Q 226,212 230,226 L 220,380 Q 214,401 193,406 Z M 24,393 82,360 164,360 182,409 46,409 Q 31,406 24,393 Z M 44,39 85,78 80,176 48,195 Q 30,197 29,180 L 36,51 Q 36,41 44,39 Z M 54,207 90,183 168,183 201,205 168,227 90,227 Z" 
+,"M 52,31 Q 58,21 72,20 L 206,20 175,70 93,70 Z M 193,406 170,349 176,234 209,214 Q 226,212 230,226 L 220,380 Q 214,401 193,406 Z M 24,393 82,360 164,360 182,409 46,409 Q 31,406 24,393 Z M 47,217 78,236 72,354 20,382 26,236 Q 26,214 47,217 Z M 44,39 85,78 80,176 48,195 Q 30,197 29,180 L 36,51 Q 36,41 44,39 Z M 54,207 90,183 168,183 201,205 168,227 90,227 Z" 
+,"M 52,31 Q 58,21 72,20 L 206,20 175,70 93,70 Z M 206,193 179,174 183,76 214,24 Q 236,24 240,51 L 232,175 Q 227,198 206,193 Z M 193,406 170,349 176,234 209,214 Q 226,212 230,226 L 220,380 Q 214,401 193,406 Z" 
+, "M 52,31 Q 58,21 72,20 L 206,20 175,70 93,70 Z M 206,193 179,174 183,76 214,24 Q 236,24 240,51 L 232,175 Q 227,198 206,193 Z M 193,406 170,349 176,234 209,214 Q 226,212 230,226 L 220,380 Q 214,401 193,406 Z M 24,393 82,360 164,360 182,409 46,409 Q 31,406 24,393 Z M 47,217 78,236 72,354 20,382 26,236 Q 26,214 47,217 Z M 44,39 85,78 80,176 48,195 Q 30,197 29,180 L 36,51 Q 36,41 44,39 Z M 54,207 90,183 168,183 201,205 168,227 90,227 Z" 
+,"M 52,31 Q 58,21 72,20 L 206,20 175,70 93,70 Z M 206,193 179,174 183,76 214,24 Q 236,24 240,51 L 232,175 Q 227,198 206,193 Z M 24,393 82,360 164,360 182,409 46,409 Q 31,406 24,393 Z M 193,406 170,349 176,234 209,214 Q 226,212 230,226 L 220,380 Q 214,401 193,406 Z M 44,39 85,78 80,176 48,195 Q 30,197 29,180 L 36,51 Q 36,41 44,39 Z M 54,207 90,183 168,183 201,205 168,227 90,227 Z" ]
+
+
+function updateClock() {
+
+ const d = new Date();
+
+ if(d.getHours() < 10)
+  document.getElementById('ha').setAttribute("d","")
+ else
+  document.getElementById('ha').setAttribute("d",aNums[Math.trunc(d.getHours()/10)])
+
+ document.getElementById('hb').setAttribute("d",aNums[d.getHours()%10])
+
+ if(d.getMinutes() < 10)
+  document.getElementById('ma').setAttribute("d",aNums[0])
+ else
+  document.getElementById('ma').setAttribute("d",aNums[Math.trunc(d.getMinutes()/10)])
+
+ document.getElementById('mb').setAttribute("d",aNums[d.getMinutes()%10])
+
+
+ if( d.getSeconds() < 10)
+  document.getElementById('sa').setAttribute("d",aNums[0])
+ else
+  document.getElementById('sa').setAttribute("d",aNums[Math.trunc(d.getSeconds()/10)])
+
+ document.getElementById('sb').setAttribute("d",aNums[d.getSeconds()%10])
+
+ setTimeout(updateClock, 1000 - d.getTime() % 1000 + 20);
+}
+
+</script>
+<body onload="updateClock()">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1520 430" width="100%">
+<rect width="100%" height="100%"/>
+<g>
+  <path d="" id="ha"></path>
+  <path transform="translate(260 0)" d="" id="hb"></path>
+  <g transform="translate(510 0)" class="blink_me"><circle cx="57" cy="124" r="25"></circle><circle cx="45" cy="298" r="25"></circle></g>
+  <path transform="translate(610 0)" d="" id="ma"></path>
+  <path transform="translate(870 0)" d="" id="mb"></path>
+  <path transform="translate(1140 100) scale(0.75)" d="" id="sa"></path>
+  <path transform="translate(1320 100) scale(0.75)" d="" id="sb"></path>
+</g>
+</svg>
+</body></html>
